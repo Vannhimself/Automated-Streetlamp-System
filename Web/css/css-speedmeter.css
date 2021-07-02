@@ -1,0 +1,94 @@
+.progress-speed {
+   font-size: 20px;
+   margin: 20px;
+   position: relative; /* so that children can be absolutely positioned */
+   padding: 0;
+   width: 5em;
+   height: 5em;
+   background-color: #F2E9E1; 
+   /*background-color: #58a832;*/
+   border-radius: 50%;
+   line-height: 5em;
+}
+
+.progress-speed:after{
+    border: none;
+    position: absolute;
+    top: 0.35em;
+    left: 0.35em;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    width: 4.3em;
+    height: 4.3em;
+    background-color: white;
+    content: " ";
+}
+
+/* Text inside the control */
+.progress-speed span {
+    position: absolute;
+    line-height: 5em;
+    width: 5em;
+    text-align: center;
+    display: block;
+    color: #53777A;
+    /*color: #58a832;*/
+    z-index: 2;
+}
+.right-half-clipper { 
+   /* a round speed */
+   border-radius: 50%;
+   width: 5em;
+   height: 5em;
+   position: absolute; /* needed for clipping */
+   clip: rect(0, 5em, 5em, 2.5em); /* clips the whole left half*/ 
+}
+/* when p>50, don't clip left half*/
+.progress-speed.over50 .right-half-clipper {
+   clip: rect(auto,auto,auto,auto);
+}
+
+.speed-bar {
+   /*This is an overlayed square, that is made round with the border radius,
+   then it is cut to display only the left half, then rotated clockwise
+   to escape the outer clipping path.*/ 
+   position: absolute; /*needed for clipping*/
+   clip: rect(0, 2.5em, 5em, 0);
+   width: 5em;
+   height: 5em;
+   border-radius: 50%;
+   /* Buat ganti warna bar */
+   border: 0.45em solid #9b42f5; /*The border is 0.35 but making it larger removes visual artifacts */
+   /*background-color: #4D642D;*/ /* for debug */
+   box-sizing: border-box;
+  
+}
+
+/* Progress bar filling the whole right half for speeds above 50% */
+.progress-speed.over50 .second50-bar {
+   /*Progress bar for the second 50%, filling the whole right half*/
+   position: absolute; /*needed for clipping*/
+   clip: rect(0, 5em, 5em, 2.5em);
+   background-color: #9b42f5;
+   border-radius: 50%;
+   width: 5em;
+   height: 5em;
+}
+.progress-speed:not(.over50) .second50-bar{ display: none; }
+
+
+/* Progress bar rotation position */
+.progress-speed.p0 .speed-bar { transform: rotate(0deg); }
+.progress-speed.p1 .speed-bar { transform: rotate(30deg); }
+.progress-speed.p2 .speed-bar { transform: rotate(60deg); }
+.progress-speed.p3 .speed-bar { transform: rotate(90deg); }
+.progress-speed.p4 .speed-bar { transform: rotate(120deg); }
+.progress-speed.p5 .speed-bar { transform: rotate(150deg); }
+.progress-speed.p6 .speed-bar { transform: rotate(180deg); }
+.progress-speed.p7 .speed-bar { transform: rotate(210deg); }
+.progress-speed.p8 .speed-bar { transform: rotate(240deg); }
+.progress-speed.p9 .speed-bar { transform: rotate(270deg); }
+.progress-speed.p10 .speed-bar { transform: rotate(300deg); }
+.progress-speed.p11 .speed-bar { transform: rotate(330deg); }
+.progress-speed.p12 .speed-bar { transform: rotate(360deg); }

@@ -1,0 +1,15 @@
+Akses database bisa dilihat pada folder dist/db.php.
+
+Pastikan untuk mengatur database untuk memiliki kapasitas data min. 100mb.
+
+Akses login pada web dapat dilihat pada tabel petugas pada database.
+
+Fitur terbagi atas 2 bagian, yaitu fitur admin, dan petugas.
+
+Khusus pada tabel petugas, dimohonkan untuk admin dan superadmin tidak diganti, karena merupakan akses utama pada input data petugas.
+
+Disarankan untuk menghosting sistem ke internet sebelum digunakan.
+
+sarjanat_lampu.sql merupakan database yang digunakan pada sistem ini.
+
+/* Regards, Aleksander Bima S W T - 311510005 */
